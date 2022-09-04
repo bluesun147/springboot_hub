@@ -17,14 +17,14 @@ public class ProductDaoImpl implements ProductDao { // dao 인터페이스 imple
     }
 
     @Override
-    public ProductEntity saveProduct(ProductEntity productEntity) {
-        return productRepository.save(productEntity); // jpaRepository 제공하는 기본 메서드 (save, getById..)
-//        return productEntity;
-    }
-
-    @Override
     public ProductEntity getProduct(String productId) {
         ProductEntity productEntity = productRepository.getById(productId);
         return productEntity;
+    }
+
+    @Override
+    public ProductEntity saveProduct(ProductEntity productEntity) {
+        return productRepository.save(productEntity); // jpaRepository 제공하는 기본 메서드 (save, getById..)
+//        return productEntity;
     }
 }
