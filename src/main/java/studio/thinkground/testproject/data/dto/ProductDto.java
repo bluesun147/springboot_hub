@@ -5,13 +5,28 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
 @Data
 @NoArgsConstructor @AllArgsConstructor
 @Builder
 public class ProductDto { // 계층간 어떤 데이터 주고 받을 것인지
 
+    @NotNull
     private String productId;
+
+    @NotNull
     private String productName;
+
+    @NotNull
+    @Min(value = 500)
+    @Max(value = 3000000)
     private int productPrice;
+
+    @NotNull
+    @Min(value = 0)
+    @Max(value = 9999)
     private int productStock;
 }
