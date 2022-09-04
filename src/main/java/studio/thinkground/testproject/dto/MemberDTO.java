@@ -8,5 +8,5 @@ import lombok.ToString;
 public class MemberDTO {
     private String name;
     private String email;
-    private String organization;
+    private String organization; // 필드
 }
